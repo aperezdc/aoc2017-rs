@@ -1,39 +1,21 @@
 //
-// main.rs
+// day01.rs
 // Copyright (C) 2017 Adrian Perez <aperez@igalia.com>
 // Distributed under terms of the MIT license.
 //
 
+extern crate aoc2017;
+
 use std::io::{ self, Read };
-
-
-#[inline]
-fn is_ascii_digit(byte: &u8) -> bool
-{
-    *byte >= 0x30 && *byte <= 0x39
-}
-
-fn ascii_digit(byte: u8) -> u32
-{
-    if is_ascii_digit(&byte) {
-        byte as u32 - 0x30
-    } else {
-        panic!("Byte 0x{:02X} is not a number", byte)
-    }
-}
+use aoc2017::iter_digits;
 
 
 fn main()
 {
-    let mut sum = 0;
-
-    let mut digits = io::stdin().bytes()
-        .map(|item| item.unwrap())
-        .take_while(is_ascii_digit)
-        .map(ascii_digit);
-
+    let mut digits = iter_digits(io::stdin().bytes());
     let first = digits.next().unwrap();
     let mut last = first;
+    let mut sum = 0;
 
     loop {
         match digits.next() {
