@@ -1,6 +1,9 @@
 [package]
-name = "day01"
+name = "aoc2017"
 version = "0.1.0"
 authors = ["Adrian Perez de Castro <aperez@igalia.com>"]
 
 [dependencies]
+
+[profile.release]
+lto = true
