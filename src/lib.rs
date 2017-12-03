@@ -98,3 +98,15 @@ impl<T> Permutations for Vec<T>
         VecPermutations { v: self, i: 0, j: 0 }
     }
 }
+
+
+pub mod day03 {
+    pub fn grid_size_for_cell(cellindex: u32) -> u32
+    {
+        let mut size = 1;
+        while cellindex > size * size {
+            size += 2;
+        }
+        return size;
+    }
+}

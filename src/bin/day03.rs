@@ -4,19 +4,12 @@
 // Distributed under terms of the MIT license.
 //
 
+extern crate aoc2017;
+
+use aoc2017::day03::grid_size_for_cell;
 use std::io;
 use std::io::prelude::*;
 use std::str::FromStr;
-
-
-fn grid_size_for_cell(cellindex: u32) -> u32
-{
-    let mut size = 1;
-    while cellindex > size * size {
-        size += 2;
-    }
-    return size;
-}
 
 
 // For a memory grid, the center point is always "1", and the bottom-right
