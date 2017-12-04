@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Adrian Perez de Castro <aperez@igalia.com>"]
 
 [dependencies]
+permutohedron = "0.2"
 
 [profile.release]
 lto = true
