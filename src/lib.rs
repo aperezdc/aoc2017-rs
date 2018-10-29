@@ -4,8 +4,6 @@
 // Distributed under terms of the MIT license.
 //
 
-#![feature(conservative_impl_trait)]
-
 use std::io::{ self, BufRead, Read };
 use std::str::FromStr;
 
